@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MathQuest Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>🌟 MathQuest: Learn & Play! 🌟</header>
+
+  <!-- Welcome Modal with Hints -->
+  <div id="introModal" class="modal">
+    <div class="modal-content">
+      <h2>Welcome to MathQuest!</h2>
+      <p>🎯 Solve fun math puzzles! Earn stars and unlock trophies!</p>
+      <ul style="text-align: left; font-size: 1.1em; margin-top: 15px;">
+        <li>➕<strong>Addition</strong>,➖<strong>Subtraction</strong>,✖️<strong>Multiplication</strong>,➗<strong>Division</strong>,📐<strong>Algebraic Formulae</strong>,📏<strong>Theorems</strong></li>
+        <li>🧠 Answer within <strong>10 seconds</strong> per question!</li>
+        <li>💡 If you're stuck, a <strong>hint video</strong> will help you!</li>
+        <li>⭐ Collect stars for each correct answer</li>
+        <li>⏳ Take a short <strong>break every 10 minutes</strong></li>
+        <li>🎉 Complete all 12 levels to win the medal!</li>
+      </ul>
+      <button id="startBtn" style="margin-top: 20px;">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Game Status Bar -->
+  <div class="status">
+    <div>⏰ Time: <span id="timer">10</span>s</div>
+    <div>⭐ Stars: <span id="stars">0</span></div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div id="progress-bar" class="progress-bar"></div>
+  </div>
+
+  <!-- Break Message -->
+  <div id="break-message">Time for a 5-minute break! ⏳ Relax and return soon! 🧘‍♂️</div>
+
+  <!-- Quiz Area -->
+  <div id="quiz"></div>
+
+  <!-- Celebration -->
+  <div id="celebration" style="display: none;">🎉 Great Job! 🎉</div>
+
+  <!-- Congratulations Message -->
+  <div id="congratulations">
+    <h1>🏆 Congratulations! You completed the MathQuest! 🏆</h1>
+    <div id="medal"></div>
+    <div id="balloons"></div>
+  </div>
+
+  <!-- Video Hint Player -->
+  <div id="videoHint" style="display: none; margin-top: 20px;">
+    <h3>Need help? Watch this:</h3>
+    <iframe id="hintVideoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

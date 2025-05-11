@@ -1,0 +1,238 @@
+/* Global Styles */
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 100vh;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+/* Header Style */
+header {
+  font-size: 3em;
+  color: #fff;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  padding: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  border-bottom: 5px solid #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Status Info */
+.status {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+  font-size: 1.5em;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 80%;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 15px auto 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  width: 0%;
+  transition: width 0.8s ease-in-out;
+}
+
+/* Quiz Area */
+#quiz h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease;
+  color: #fff;
+}
+
+/* Options Buttons */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.3em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 118, 163, 0.4);
+  transition: transform 0.2s, background-color 0.4s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  box-shadow: 0 10px 25px rgba(106, 17, 203, 0.5);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Celebration Message */
+#celebration {
+  font-size: 2em;
+  color: #ffeb3b;
+  margin-top: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Congratulations Section */
+#congratulations {
+  display: none;
+  text-align: center;
+  margin-top: 40px;
+  color: #fff;
+}
+
+#congratulations h1 {
+  font-size: 3em;
+  color: #00ffcc;
+  text-shadow: 2px 2px 10px #000;
+  margin-bottom: 20px;
+}
+
+/* Balloons */
+#balloons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.balloon {
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  animation: floatBalloon 4s infinite ease-in-out;
+  box-shadow: inset -4px -6px 0 rgba(0,0,0,0.1), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.balloon::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 2px;
+  height: 15px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.balloon:nth-child(1) { background: #FF5252; animation-delay: 0s; }
+.balloon:nth-child(2) { background: #FFEB3B; animation-delay: 0.3s; }
+.balloon:nth-child(3) { background: #4CAF50; animation-delay: 0.6s; }
+.balloon:nth-child(4) { background: #03A9F4; animation-delay: 0.9s; }
+.balloon:nth-child(5) { background: #E91E63; animation-delay: 1.2s; }
+
+@keyframes floatBalloon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  width: 80%;
+  margin: 10% auto;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Break Message */
+#break-message {
+  background-color: #ff4081;
+  padding: 20px;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 15px;
+  display: none;
+  margin: 20px auto;
+  width: 60%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Trophy Icon */
+#trophy {
+  font-size: 5em;
+  color: gold;
+  margin-top: 20px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+.medal {
+  font-size: 5em;
+  margin: 20px auto;
+  animation: popMedal 1s ease-in-out;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.medal.gold {
+  color: gold;
+}
+.medal.silver {
+  color: silver;
+}
+.medal.bronze {
+  color: #cd7f32;
+}
+
+@keyframes popMedal {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
